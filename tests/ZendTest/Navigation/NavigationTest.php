@@ -10,7 +10,8 @@
 
 namespace ZendTest\Navigation;
 
-use Zend\Navigation\Page;
+use Zend\Navigation\Navigation;
+use Zend\Navigation\Page\Uri;
 
 /**
  * Zend_Navigation
@@ -25,14 +26,14 @@ use Zend\Navigation\Page;
 class NavigationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var     Zend_Navigation
+     * @var Navigation
      */
     private $_navigation;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->_navigation = new \Zend\Navigation\Navigation();
+        $this->_navigation = new Navigation();
     }
 
     protected function tearDown()
@@ -49,9 +50,9 @@ class NavigationTest extends \PHPUnit_Framework_TestCase
      */
     public function testNavigationArraySortsCorrectly()
     {
-        $page1 = new Page\Uri(array('uri' => 'page1'));
-        $page2 = new Page\Uri(array('uri' => 'page2'));
-        $page3 = new Page\Uri(array('uri' => 'page3'));
+        $page1 = new Uri(array('uri' => 'page1'));
+        $page2 = new Uri(array('uri' => 'page2'));
+        $page3 = new Uri(array('uri' => 'page3'));
 
         $this->_navigation->setPages(array($page1, $page2, $page3));
 

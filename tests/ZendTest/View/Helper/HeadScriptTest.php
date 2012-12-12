@@ -10,12 +10,12 @@
 
 namespace ZendTest\View\Helper;
 
-use Zend\View\Helper\Placeholder\Registry;
-use Zend\View\Helper;
 use Zend\View;
+use Zend\View\Helper\HeadScript;
+use Zend\View\Helper\Placeholder\Registry;
 
 /**
- * Test class for Zend_View_Helper_HeadScript.
+ * Test class for Zend\View\Helper\HeadScript.
  *
  * @category   Zend
  * @package    Zend_View
@@ -26,7 +26,7 @@ use Zend\View;
 class HeadScriptTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Zend_View_Helper_HeadScript
+     * @var HeadScript
      */
     public $helper;
 
@@ -46,7 +46,7 @@ class HeadScriptTest extends \PHPUnit_Framework_TestCase
     {
         Registry::unsetRegistry();
         $this->basePath = __DIR__ . '/_files/modules';
-        $this->helper = new Helper\HeadScript();
+        $this->helper = new HeadScript();
     }
 
     /**
@@ -67,14 +67,14 @@ class HeadScriptTest extends \PHPUnit_Framework_TestCase
             $registry->deleteContainer('Zend_View_Helper_HeadScript');
         }
         $this->assertFalse($registry->containerExists('Zend_View_Helper_HeadScript'));
-        $helper = new Helper\HeadScript();
+        $helper = new HeadScript();
         $this->assertTrue($registry->containerExists('Zend_View_Helper_HeadScript'));
     }
 
     public function testHeadScriptReturnsObjectInstance()
     {
         $placeholder = $this->helper->__invoke();
-        $this->assertTrue($placeholder instanceof Helper\HeadScript);
+        $this->assertTrue($placeholder instanceof HeadScript);
     }
 
     public function testSetPrependAppendAndOffsetSetThrowExceptionsOnInvalidItems()

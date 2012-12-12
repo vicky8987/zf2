@@ -25,7 +25,7 @@ class IgnoreUserAbortTest extends CommonPluginTest
     /**
      * The storage adapter
      *
-     * @var Zend\Cache\Storage\Adapter\AbstractAdapter
+     * @var Cache\Storage\Adapter\AbstractAdapter
      */
     protected $_adapter;
 

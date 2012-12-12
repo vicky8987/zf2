@@ -21,7 +21,7 @@ use Zend\I18n\Validator\PostCode as PostCodeValidator;
 class PostCodeTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var  PostCode
+     * @var PostCodeValidator
      */
     protected $validator;
 

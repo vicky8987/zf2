@@ -23,7 +23,7 @@ class StripTagsTest extends \PHPUnit_Framework_TestCase
     /**
      * Zend_Filter_StripTags object
      *
-     * @var Zend_Filter_StripTags
+     * @var StripTagsFilter
      */
     protected $_filter;
 

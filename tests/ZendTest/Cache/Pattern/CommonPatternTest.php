@@ -22,7 +22,7 @@ class CommonPatternTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var Zend\Cache\Pattern\PageCache
+     * @var Cache\Pattern\AbstractPattern
      */
     protected $_pattern;
 

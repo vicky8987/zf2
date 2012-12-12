@@ -26,10 +26,9 @@ use Zend\View\Helper\Placeholder\Container;
 class RegistryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Zend_View_Helper_Placeholder_Registry
+     * @var Registry
      */
     public $registry;
-
 
     /**
      * Sets up the fixture, for example, open a network connection.

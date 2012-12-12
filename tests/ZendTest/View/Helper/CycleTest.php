@@ -10,10 +10,10 @@
 
 namespace ZendTest\View\Helper;
 
-use Zend\View\Helper;
+use Zend\View\Helper\Cycle;
 
 /**
- * Test class for Zend_View_Helper_Cycle.
+ * Test class for Zend\View\Cycle.
  *
  * @category   Zend
  * @package    Zend_View
@@ -24,7 +24,7 @@ use Zend\View\Helper;
 class CycleTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Zend_View_Helper_Cycle
+     * @var Cycle
      */
     public $helper;
 
@@ -36,7 +36,7 @@ class CycleTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->helper = new Helper\Cycle();
+        $this->helper = new Cycle();
     }
 
     /**
@@ -53,7 +53,7 @@ class CycleTest extends \PHPUnit_Framework_TestCase
     public function testCycleMethodReturnsObjectInstance()
     {
         $cycle = $this->helper->__invoke();
-        $this->assertTrue($cycle instanceof Helper\Cycle);
+        $this->assertTrue($cycle instanceof Cycle);
     }
 
     public function testAssignAndGetValues()

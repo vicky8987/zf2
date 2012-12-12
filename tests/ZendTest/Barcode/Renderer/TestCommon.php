@@ -24,7 +24,7 @@ abstract class TestCommon extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var \Zend\Barcode\Renderer
+     * @var Barcode\Renderer\RendererInterface
      */
     protected $renderer = null;
 
@@ -34,6 +34,10 @@ abstract class TestCommon extends \PHPUnit_Framework_TestCase
      */
     private $originaltimezone;
 
+    /**
+     * @param null $options
+     * @return Barcode\Renderer\RendererInterface
+     */
     abstract protected function getRendererObject($options = null);
 
     public function setUp()

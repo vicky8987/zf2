@@ -25,7 +25,7 @@ class AbstractAdapterTest extends \PHPUnit_Framework_TestCase
     /**
      * Mock of the abstract storage adapter
      *
-     * @var Zend\Cache\Storage\Adapter\AbstractAdapter
+     * @var Cache\Storage\Adapter\AbstractAdapter
      */
     protected $_storage;
 

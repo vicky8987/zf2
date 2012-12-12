@@ -23,7 +23,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Zend_XmlRpc_Response object
-     * @var Zend_XmlRpc_Response
+     * @var Response
      */
     protected $_response;
 

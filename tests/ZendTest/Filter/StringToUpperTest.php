@@ -21,9 +21,9 @@ use Zend\Filter\StringToUpper as StringToUpperFilter;
 class StringToUpperTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Zend_Filter_StringToLower object
+     * StringToUpperFilter object
      *
-     * @var Zend_Filter_StringToLower
+     * @var StringToUpperFilter
      */
     protected $_filter;
 

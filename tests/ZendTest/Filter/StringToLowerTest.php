@@ -11,6 +11,7 @@
 namespace ZendTest\Filter;
 
 use Zend\Filter\StringToLower as StringToLowerFilter;
+use Zend\Filter\Exception\ExtensionNotLoadedException;
 
 /**
  * @category   Zend
@@ -21,9 +22,9 @@ use Zend\Filter\StringToLower as StringToLowerFilter;
 class StringToLowerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Zend_Filter_StringToLower object
+     * StringToLowerFilter object
      *
-     * @var Zend_Filter_StringToLower
+     * @var StringToLowerFilter
      */
     protected $_filter;
 
@@ -76,7 +77,7 @@ class StringToLowerTest extends \PHPUnit_Framework_TestCase
             foreach ($valuesExpected as $input => $output) {
                 $this->assertEquals($output, $filter($input));
             }
-        } catch (\Zend\Filter\Exception\ExtensionNotLoadedException $e) {
+        } catch (ExtensionNotLoadedException $e) {
             $this->assertContains('mbstring is required', $e->getMessage());
         }
     }
@@ -110,7 +111,7 @@ class StringToLowerTest extends \PHPUnit_Framework_TestCase
             foreach ($valuesExpected as $input => $output) {
                 $this->assertEquals($output, $filter($input));
             }
-        } catch (\Zend\Filter\Exception\ExtensionNotLoadedException $e) {
+        } catch (ExtensionNotLoadedException $e) {
             $this->assertContains('mbstring is required', $e->getMessage());
         }
     }
@@ -142,7 +143,7 @@ class StringToLowerTest extends \PHPUnit_Framework_TestCase
             foreach ($valuesExpected as $input => $output) {
                 $this->assertEquals($output, $filter($input));
             }
-        } catch (\Zend\Filter\Exception\ExtensionNotLoadedException $e) {
+        } catch (ExtensionNotLoadedException $e) {
             $this->assertContains('mbstring is required', $e->getMessage());
         }
     }

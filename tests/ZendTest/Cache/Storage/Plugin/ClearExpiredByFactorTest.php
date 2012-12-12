@@ -21,7 +21,7 @@ class ClearExpiredByFactorTest extends CommonPluginTest
     /**
      * The storage adapter
      *
-     * @var ZendTest\Cache\Storage\TestAsset\MockAdapter
+     * @var \ZendTest\Cache\Storage\TestAsset\MockAdapter
      */
     protected $_adapter;
 

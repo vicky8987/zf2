@@ -25,14 +25,14 @@ class CapabilitiesTest extends \PHPUnit_Framework_TestCase
     /**
      * Capabilities instance
      *
-     * @var Zend\Cache\Storage\Capabilities
+     * @var Capabilities
      */
     protected $_capabilities;
 
     /**
      * Base capabilities instance
      *
-     * @var Zend\Cache\Storage\Capabilities
+     * @var Capabilities
      */
     protected $_baseCapabilities;
 

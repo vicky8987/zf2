@@ -23,12 +23,12 @@ use Zend\Soap\Wsdl;
 class DefaultComplexTypeTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Zend_Soap_Wsdl
+     * @var Wsdl
      */
     private $wsdl;
 
     /**
-     * @var Zend_Soap_Wsdl_Strategy_DefaultComplexType
+     * @var DefaultComplexType
      */
     private $strategy;
 

@@ -10,9 +10,10 @@
 
 namespace ZendTest\View\Helper;
 
-use Zend\View\Helper\Placeholder\Registry;
-use Zend\View\Helper;
 use Zend\View;
+use Zend\View\Helper\HeadStyle;
+use Zend\View\Helper\Placeholder\Registry;
+use Zend\View\Exception\ExceptionInterface;
 
 /**
  * Test class for Zend_View_Helper_HeadStyle.
@@ -26,7 +27,7 @@ use Zend\View;
 class HeadStyleTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Zend_View_Helper_HeadStyle
+     * @var HeadStyle
      */
     public $helper;
 
@@ -45,7 +46,7 @@ class HeadStyleTest extends \PHPUnit_Framework_TestCase
     {
         Registry::unsetRegistry();
         $this->basePath = __DIR__ . '/_files/modules';
-        $this->helper = new Helper\HeadStyle();
+        $this->helper = new HeadStyle();
     }
 
     /**
@@ -66,14 +67,14 @@ class HeadStyleTest extends \PHPUnit_Framework_TestCase
             $registry->deleteContainer('Zend_View_Helper_HeadStyle');
         }
         $this->assertFalse($registry->containerExists('Zend_View_Helper_HeadStyle'));
-        $helper = new Helper\HeadStyle();
+        $helper = new HeadStyle();
         $this->assertTrue($registry->containerExists('Zend_View_Helper_HeadStyle'));
     }
 
     public function testHeadStyleReturnsObjectInstance()
     {
         $placeholder = $this->helper->__invoke();
-        $this->assertTrue($placeholder instanceof Helper\HeadStyle);
+        $this->assertTrue($placeholder instanceof HeadStyle);
     }
 
     public function testAppendPrependAndSetThrowExceptionsWhenNonStyleValueProvided()
@@ -81,19 +82,19 @@ class HeadStyleTest extends \PHPUnit_Framework_TestCase
         try {
             $this->helper->append('foo');
             $this->fail('Non-style value should not append');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
         try {
             $this->helper->offsetSet(5, 'foo');
             $this->fail('Non-style value should not offsetSet');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
         try {
             $this->helper->prepend('foo');
             $this->fail('Non-style value should not prepend');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
         try {
             $this->helper->set('foo');
             $this->fail('Non-style value should not set');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
     }
 
     public function testOverloadAppendStyleAppendsStyleToStack()
@@ -271,7 +272,7 @@ class HeadStyleTest extends \PHPUnit_Framework_TestCase
         try {
             $this->helper->bogusMethod();
             $this->fail('Invalid method should raise exception');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
     }
 
     public function testTooFewArgumentsRaisesException()
@@ -279,7 +280,7 @@ class HeadStyleTest extends \PHPUnit_Framework_TestCase
         try {
             $this->helper->appendStyle();
             $this->fail('Too few arguments should raise exception');
-        } catch (View\Exception\ExceptionInterface $e) { }
+        } catch (ExceptionInterface $e) { }
     }
 
     public function testIndentationIsHonored()
@@ -324,7 +325,7 @@ h1 {
                 $this->helper->__invoke()->captureStart();
                 $this->helper->__invoke()->captureEnd();
                 $this->fail('Nested capturing should fail');
-            } catch (View\Exception\ExceptionInterface $e) {
+            } catch (ExceptionInterface $e) {
                 $this->helper->__invoke()->captureEnd();
                 $this->assertContains('Cannot nest', $e->getMessage());
             }

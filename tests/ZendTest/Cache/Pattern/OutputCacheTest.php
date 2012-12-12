@@ -22,7 +22,7 @@ class OutputCacheTest extends CommonPatternTest
 {
 
     /**
-     * @var Zend\Cache\Storage\StorageInterface
+     * @var Cache\Storage\StorageInterface
      */
     protected $_storage;
 
